@@ -1,0 +1,138 @@
+'=====================================================================
+' 材料表插入資料 - VBA 範例
+' 適用結構: A欄=分類(合併儲存格) / B欄=子分類(合併儲存格) / C欄=Data
+'=====================================================================
+
+'---------------------------------------------------------------------
+' 【設定步驟】
+' 1. 在活頁簿新增一個頁籤,命名為「新增資料」(名稱可自行更改,程式碼要對應改)
+' 2. 在該頁籤放置:
+'      B2: 分類下拉選單 (資料 > 資料驗證 > 清單,來源填 分類一,分類二)
+'      B3: 子分類下拉選單 (先用資料驗證清單,或用下方 Worksheet_Change 做連動)
+'      B4: 輸入欲新增的資料內容
+'      一個按鈕(表單控制項),指定巨集為 InsertData
+' 3. 主資料表頁籤名稱請改成你實際的名稱(下面程式碼用「資料表」)
+' 4. 按 Alt+F11 開啟 VBE,插入一個「模組(Module)」,貼上下面 InsertData 程式碼
+' 5. 若要讓子分類下拉選單「連動」分類選單,把 UpdateSubCategoryList
+'    程式碼貼到「新增資料」頁籤的程式碼視窗(不是模組),當作 Worksheet_Change 事件
+'---------------------------------------------------------------------
+
+Sub InsertData()
+
+    Dim wsData As Worksheet, wsSel As Worksheet
+    Set wsData = ThisWorkbook.Sheets("資料表")     '<< 改成你的主表頁籤名稱
+    Set wsSel = ThisWorkbook.Sheets("新增資料")     '<< 改成你的選擇頁頁籤名稱
+
+    Dim cat As String, subcat As String, newVal As String
+    cat = Trim(wsSel.Range("B2").Value)
+    subcat = Trim(wsSel.Range("B3").Value)
+    newVal = Trim(wsSel.Range("B4").Value)
+
+    If cat = "" Or subcat = "" Or newVal = "" Then
+        MsgBox "請完整選擇分類、子分類，並輸入資料內容", vbExclamation
+        Exit Sub
+    End If
+
+    Dim lastRow As Long, i As Long
+    lastRow = wsData.Cells(wsData.Rows.Count, "A").End(xlUp).Row
+
+    ' 找到符合 分類+子分類 的最後一列(區塊底部)
+    Dim insertRow As Long
+    insertRow = 0
+    For i = 2 To lastRow
+        If wsData.Cells(i, "A").MergeArea.Cells(1, 1).Value = cat Then
+            If wsData.Cells(i, "B").MergeArea.Cells(1, 1).Value = subcat Then
+                insertRow = i
+            End If
+        End If
+    Next i
+
+    If insertRow = 0 Then
+        MsgBox "找不到符合的分類/子分類，請確認名稱是否正確", vbExclamation
+        Exit Sub
+    End If
+
+    ' insertRow 目前已經是該子分類區塊最後一列(因迴圈會一直更新到最後符合列)
+    Dim blockStartCat As Long, blockStartSub As Long
+    blockStartCat = wsData.Cells(insertRow, "A").MergeArea.Row
+    blockStartSub = wsData.Cells(insertRow, "B").MergeArea.Row
+
+    ' 記住分類合併範圍的「結束列」(插入前)
+    Dim catMergeEndRow As Long
+    catMergeEndRow = wsData.Cells(insertRow, "A").MergeArea.Row + _
+                      wsData.Cells(insertRow, "A").MergeArea.Rows.Count - 1
+
+    ' 在區塊最後一列「之後」插入一列新資料
+    wsData.Rows(insertRow + 1).Insert Shift:=xlDown
+    wsData.Rows(insertRow).Copy
+    wsData.Rows(insertRow + 1).PasteSpecial Paste:=xlPasteFormats
+    Application.CutCopyMode = False
+
+    wsData.Cells(insertRow + 1, "C").Value = newVal
+
+    ' 重新合併「子分類」欄:原範圍 + 新的一列
+    With wsData.Range(wsData.Cells(blockStartSub, "B"), wsData.Cells(insertRow + 1, "B"))
+        .UnMerge
+        .Merge
+    End With
+
+    ' 重新合併「分類」欄:原範圍 + 新的一列
+    ' 分類的合併範圍可能橫跨好幾個子分類，所以用插入前記錄的結束列 +1
+    With wsData.Range(wsData.Cells(blockStartCat, "A"), wsData.Cells(catMergeEndRow + 1, "A"))
+        .UnMerge
+        .Merge
+    End With
+
+    MsgBox "資料已成功新增！", vbInformation
+
+    ' 清空輸入欄，方便下一次輸入
+    wsSel.Range("B4").ClearContents
+
+End Sub
+
+
+'---------------------------------------------------------------------
+' 【選用】讓「子分類」下拉選單隨「分類」選擇而變動
+' 這段程式碼要貼在「新增資料」工作表的程式碼視窗（不是模組）
+'---------------------------------------------------------------------
+Private Sub Worksheet_Change(ByVal Target As Range)
+
+    If Target.Address = "$B$2" Then   ' 分類欄位被改變時
+
+        Dim wsData As Worksheet
+        Set wsData = ThisWorkbook.Sheets("資料表")   '<< 改成你的主表頁籤名稱
+
+        Dim cat As String
+        cat = Target.Value
+
+        Dim lastRow As Long, i As Long
+        lastRow = wsData.Cells(wsData.Rows.Count, "A").End(xlUp).Row
+
+        Dim subList As String
+        subList = ""
+
+        For i = 2 To lastRow
+            If wsData.Cells(i, "A").MergeArea.Cells(1, 1).Value = cat Then
+                Dim sc As String
+                sc = wsData.Cells(i, "B").MergeArea.Cells(1, 1).Value
+                If InStr(1, "," & subList & ",", "," & sc & ",") = 0 Then
+                    If subList = "" Then
+                        subList = sc
+                    Else
+                        subList = subList & "," & sc
+                    End If
+                End If
+            End If
+        Next i
+
+        Application.EnableEvents = False
+        Me.Range("B3").ClearContents
+        With Me.Range("B3").Validation
+            .Delete
+            .Add Type:=xlValidateList, Formula1:=subList
+        End With
+        Application.EnableEvents = True
+
+    End If
+
+End Sub
