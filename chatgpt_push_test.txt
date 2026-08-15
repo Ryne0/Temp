@@ -1,2 +1,0 @@
-Hello World
-ChatGPT direct GitHub contents write test.
