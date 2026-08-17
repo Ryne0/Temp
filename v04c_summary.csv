@@ -1,0 +1,6 @@
+Scenario,Any first rupture by T+13 %,Any first rupture by T+18 %
+No Kumamoto,6.22,43.34
+v0.3 distance+memory,7.79,47.160000000000004
+v0.4a + WSM,7.91,47.24
+v0.4b + WSM + CMT weak planes,8.05,47.29
+v0.4c + WSM + continuous Slab2 / CMT fallback,7.95,47.19
