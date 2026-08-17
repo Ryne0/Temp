@@ -22,7 +22,7 @@ jobs:
       - name: Install Python dependencies
         run: python -m pip install --upgrade pip numpy pandas requests
       - name: Run official Slab2 v0.4c
-        run: python slab2_v04c_official.py
+        run: python slab2_v04c_official_v2.py
       - name: Commit compact results
         run: |
           git config user.name "github-actions[bot]"
