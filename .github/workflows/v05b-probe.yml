@@ -1,7 +1,7 @@
 name: v05b-probe
 on:
-  push:
-    branches: [experiment/v05b-path-signature-20260818]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 jobs:
   probe:
