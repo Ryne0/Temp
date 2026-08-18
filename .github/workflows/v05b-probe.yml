@@ -13,6 +13,8 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install -q pandas numpy requests xarray scipy h5py netCDF4
+      - name: Patch ScienceBase comma XYZ reader
+        run: sed -i "s/a=np.loadtxt(path,dtype=float)/a=np.genfromtxt(path,dtype=float,delimiter=',')/" experiments/v05b_full_reconstructed.py
       - run: python experiments/v05b_full_reconstructed.py
       - uses: actions/upload-artifact@v4
         with:
