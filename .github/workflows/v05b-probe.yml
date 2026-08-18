@@ -12,4 +12,4 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install -q pandas numpy requests
-      - run: python experiments/v05b_probe_slab2.py
+      - run: python experiments/v05b_probe_wsm.py
