@@ -1,0 +1,15 @@
+name: v05b-probe
+on:
+  push:
+    branches: [experiment/v05b-path-signature-20260818]
+  workflow_dispatch:
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -q pandas numpy requests
+      - run: python experiments/v05b_probe_wsm.py
