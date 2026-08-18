@@ -1,15 +1,20 @@
-name: v05b-probe
+name: v05b-full
 on:
   pull_request:
     branches: [main]
   workflow_dispatch:
 jobs:
-  probe:
+  compute:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install -q pandas numpy requests
-      - run: python experiments/v05b_probe_wsm.py
+      - run: pip install -q pandas numpy requests xarray scipy h5py netCDF4
+      - run: python experiments/v05b_full_reconstructed.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v05b-results
+          path: v05b_results/
