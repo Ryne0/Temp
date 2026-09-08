@@ -1,0 +1,97 @@
+序號,Value,Qty(Per Board),廠牌,類型,型式,辨識備註,Connector高度(mm),腳位Pitch(mm),腳位數量,資料來源,3D預覽圖連結,Datasheet連結,封裝
+1,CGA5L2C0G1H104J160AA,2,TDK,CAP,SMT,,,,,,,,1206
+2,C1005X7R1E103K050BB,4,TDK,CAP,SMT,,,,,,,,0402
+3,CGA3E1X7R1V474K080AC,2,TDK,CAP,SMT,,,,,,,,0603
+4,C1005X7R1C104K050BC,18,TDK,CAP,SMT,,,,,,,,0402
+5,C3225X7R1C226M250AC,10,TDK,CAP,SMT,,,,,,,,1210
+6,GYB1V151MCQ1GS,5,Nichicon,CAP,SMT,,,,,,,,SMD Can Ø8.3 mm（非EIA）
+7,C1005C0G1H101J050BA,6,TDK,CAP,SMT,,,,,,,,0402
+8,C3225X7R1H475K250AB,15,TDK,CAP,SMT,,,,,,,,1210
+9,C1005X7R1H104K050BB,8,TDK,CAP,SMT,,,,,,,,0402
+10,C2012X7R1V475K125AC,4,TDK,CAP,SMT,,,,,,,,0805
+11,C1005C0G1H102J050BA,3,TDK,CAP,SMT,,,,,,,,0402
+12,UUD1H151MNL1GS,1,Nichicon,CAP,SMT,,,,,,,,SMD Can Ø10.3 mm（非EIA）
+13,ADCR-X02R7SB105PT,1,Nichicon,CAP,DIP,,,,,,,,THT Radial（非EIA）
+14,C2012X7R0J106K125AB,4,TDK,CAP,SMT,,,,,,,,0805
+15,C1005X7S1A474K050BC,1,TDK,CAP,SMT,,,,,,,,0402
+16,C1005X7R1E223K050BB,1,TDK,CAP,SMT,,,,,,,,0402
+17,C1005C0G1H100D050BA,1,TDK,CAP,SMT,,,,,,,,0402
+18,C1005X7R1H222K050BA,1,TDK,CAP,SMT,,,,,,,,0402
+19,CC0603JRX7R9BB104,1,Yageo Group,CAP,SMT,,,,,,,,0603
+20,C1005C0G1H220J050BA,1,TDK,CAP,SMT,,,,,,,,0402
+21,1053141212,1,Molex,CONN,DIP,確認為 Connector；高度 9.14 mm 取 Molex 官方圖面 Front View 整體本體高度（含上方 latch）。,9.14,2.5,12,"https://www.molex.com/en-us/products/part-detail/1053141212
+https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/salesdrawingpdf/105/105314/1053141204_sd.pdf",https://www.mouser.de/ProductDetail/Molex/105314-1212?qs=PqFvFmEiOr54XMrWL0kRSg%3D%3D,"官方產品頁：https://www.molex.com/en-us/products/part-detail/1053141212
+PDF：https://datasheet.octopart.com/105314-1212-Molex-datasheet-141446421.pdf",
+22,CLP-110-02-F-D,1,Samtec,CONN,SMT,確認為 Connector；高度 2.14 mm 為 Insulation Height。,2.14,1.27,20,"https://www.samtec.com/products/clp-110-02-f-d
+https://www.digikey.com/en/products/detail/samtec-inc/CLP-110-02-F-D/1109825",https://www.samtec.com/products/clp-110-02-f-d,https://suddendocs.samtec.com/productspecs/clp-ftsh.pdf,
+23,SSQ-110-01-L-D,1,Samtec,CONN,DIP,確認為 Connector；高度 8.51 mm 為 Insulation Height。,8.51,2.54,20,https://www.digikey.com/en/products/detail/samtec-inc/SSQ-110-01-L-D/6693011,https://www.samtec.com/products/ssq-110-01-l-d,https://suddendocs.samtec.com/catalog_english/ssq_th.pdf,
+24,V8P10-M3/86A,1,Vishay,DIODE,SMT,Vishay V8P10：官方封裝 SMPC，JEDEC TO-277A。,,,,https://www.vishay.com/docs/89005/v8p10.pdf,,,SMPC (TO-277A)
+25,SMF12A-E3-18,8,Vishay,TVS DIODE,SMT,Vishay SMF12A：DO-219AB，亦稱 SMF。,,,,https://www.vishay.com/en/diodes/esd-protection/do-219ab/,,,DO-219AB (SMF)
+26,RB068MM-60TFTR,1,ROHM Semiconductor,DIODE,SMT,ROHM RB068MM-60TFTR：ROHM PMDU；Package Code SOD-123FL。,,,,https://www.rohm.com/products/diodes/schottky-barrier-diodes/ultra-low-ir/rb068mm-60tf-product,,,PMDU / SOD-123FL (SC-109B)
+27,01530008Z,1,Littelfuse,FUSE HOLDER,DIP,"確認非 Connector；Littelfuse MINI® 153-PC 垂直型 PCB Fuse Holder（Through Hole）。
+https://www.littelfuse.cn/assetdocs/mini-153-pc-datasheet?assetguid=e17755be-ccca-4a76-9579-7e7a830e5578",,,,,,,
+28,TF16SN2.00TTD,1,KOA,FUS,SMT,,,,,,,,0603
+29,ACM1211-102-2PL-TL01,1,TDK,MSC,SMT,,,,,https://product.tdk.com/en/search/emc/emc/line-filter/info?part_no=ACM1211-102-2PL-TL01,,,0.472 × 0.433 in（非EIA）
+30,LMR51450FSQDRRRQ1,4,Texas Instruments,IC,SMT,IC 封裝依 TI LMR51450 / LMR51450-Q1 資料確認；BOM Value「LMR51450FSQDRRRQ1」疑似含 OCR/字串差異，未擅自改料號。,,,,"https://www.ti.com/product/LMR51450
+https://www.ti.com/tw/lit/gpn/lmr51450",,,WSON-12 (DRR) / Pitch 0.50 mm
+31,"LMR51420YDDCR,PLMR51420XDDCT",2,Texas Instruments,IC,SMT,兩個 Value 對應同一 LMR51420 系列；封裝依 DDC 6-pin 規格。原字串中的「PLMR...」保留，不擅自更改。,,,,"https://www.ti.com/product/LMR51420/part-details/LMR51420YDDCR
+https://www.ti.com/lit/ml/mpds124i/mpds124i.pdf",,,SOT-23-THIN-6 (DDC) / Pitch 0.95 mm
+32,MAX38888ATD+T,1,Analog Devices,IC,SMT,,,,,"https://www.analog.com/media/en/technical-documentation/data-sheets/max38888.pdf
+https://mds.analog.com/api/public/content/21-0137x.pdf",,,TDFN-14 EP (3×3 mm) / Pitch 0.40 mm
+33,MAX40203AUK+T,1,Analog Devices,IC,SMT,,,,,https://www.analog.com/media/en/technical-documentation/data-sheets/max40203.pdf,,,SOT-23-5 / Pitch 0.95 mm
+34,LM25117PMHX/NOPB,1,Texas Instruments,IC,SMT,,,,,"https://www.ti.com/product/LM25117
+https://www.ti.com/lit/ml/mhts001h/mhts001h.pdf",,,HTSSOP-20 (PWP) / Pitch 0.65 mm
+35,TLV7022DDFR,4,Texas Instruments,IC,SMT,,,,,"https://www.ti.com/product/TLV7022/part-details/TLV7022DDFR
+https://www.ti.com/lit/ml/mpds569a/mpds569a.pdf",,,SOT-23-THIN-8 (DDF) / Pitch 0.65 mm
+36,TLV9062IDDFR,1,Texas Instruments,IC,SMT,,,,,"https://www.ti.com/product/TLV9062/part-details/TLV9062IDDFR
+https://www.ti.com/lit/ml/mpds569a/mpds569a.pdf",,,SOT-23-THIN-8 (DDF) / Pitch 0.65 mm
+37,178495-1,1,TE Connectivity,CONN,DIP,確認為 Connector；TE 官方規格 Connector Height 9.55 mm。,9.55,3.96,2,https://www.te.com/en/product-178495-1.html,https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocFormat=pdf&DocLang=English&DocNm=178495-1&DocType=Customer+View+Model&PartCntxt=178495-1,https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocFormat=pdf&DocLang=English&DocNm=1773458-5_POWER_DBL_LOCK&DocType=Data+Sheet&PartCntxt=178495-1,
+38,SPM6545VT-100M-D,5,TDK,IND,SMT,,,,,https://product.tdk.com/en/search/inductor/inductor/smd/info?part_no=SPM6545VT-100M-D,,,0.276 × 0.256 in（非EIA）
+39,SPM3020T-1R0M-LR,1,TDK,IND,SMT,,,,,https://product.tdk.com/en/search/inductor/inductor/smd/info?part_no=SPM3020T-1R0M-LR,,,0.126 × 0.118 in（非EIA）
+40,SPM6530T-4R7M,1,TDK,IND,SMT,,,,,https://product.tdk.com/en/search/inductor/inductor/smd/info?part_no=SPM6530T-4R7M,,,0.280 × 0.256 in（非EIA）
+41,XAL1010-103MED,1,Coilcraft,IND,SMT,,,,,https://www.coilcraft.com/en-us/products/power/shielded-inductors/molded-inductor/xal/xal1010/,,,0.394 × 0.394 in（非EIA）
+42,"NX3008PBKW,115",5,Nexperia,FET,SMT,Nexperia NX3008PBKW：SOT-323 / SC-70。,,,,https://www.nexperia.com/product/NX3008PBKW,,,SOT-323 (SC-70)
+43,NX7002BKWX,2,Nexperia,FET,SMT,Nexperia NX7002BKWX：SOT-323 / SC-70。,,,,https://www.nexperia.com/chemical-content/NX7002BKW.html,,,SOT-323 (SC-70)
+44,"BSS84AKW,115",1,Nexperia,FET,SMT,"Nexperia BSS84AKW,115：SOT-323 / SC-70。",,,,https://www.nexperia.com/chemical-content/BSS84AKW.html,,,SOT-323 (SC-70)
+45,BSZ040N06LS5ATMA1,2,Infineon,FET,SMT,Infineon BSZ040N06LS5：PG-TSDSON-8；Package Name PQFN 3×3。,,,,https://www.infineon.com/part/BSZ040N06LS5,,,PG-TSDSON-8 / PQFN 3×3
+46,AOD409,1,Alpha & Omega,FET,SMT,AOS AOD409：TO-252，常稱 DPAK。,,,,https://www.aosmd.com/products/mosfets/p-channel-mosfets-8v-60v/aod409,,,TO-252 (DPAK)
+47,RK73Z1ETTP,10,KOA,RES,SMT,,,,,,,,0402
+48,RK73H1ETTP1002F,8,KOA,RES,SMT,,,,,,,,0402
+49,RK73H1ETTP3301F,5,KOA,RES,SMT,,,,,,,,0402
+50,RK73H1ETTP1001F,13,KOA,RES,SMT,,,,,,,,0402
+51,RK73H1ETTP3302F,9,KOA,RES,SMT,,,,,,,,0402
+52,RK73H1ETTP4701F,11,KOA,RES,SMT,,,,,,,,0402
+53,RK73H1ETTP1003F,26,KOA,RES,SMT,,,,,,,,0402
+54,RK73H1ETTP6801F,3,KOA,RES,SMT,,,,,,,,0402
+55,RK73H1ETTP8201F,2,KOA,RES,SMT,,,,,,,,0402
+56,RK73H1ETTP1502F,1,KOA,RES,SMT,,,,,,,,0402
+57,RK73H2ATTD10R0F,4,KOA,RES,SMT,,,,,,,,0805
+58,RK73H1ETTP5603F,2,KOA,RES,SMT,,,,,,,,0402
+59,RK73H1ETTP2703F,1,KOA,RES,SMT,,,,,,,,0402
+60,RK73H1ETTP1503F,1,KOA,RES,SMT,,,,,,,,0402
+61,RK73H1ETTP2202F,6,KOA,RES,SMT,,,,,,,,0402
+62,RK73H1ETTP4702F,7,KOA,RES,SMT,,,,,,,,0402
+63,RK73H1ETTP2201F,1,KOA,RES,SMT,,,,,,,,0402
+64,PRL1632-R010-F-T5,1,Susumu,RES,SMT,,,,,,,,0612
+65,RK73H1ETTP1501F,1,KOA,RES,SMT,,,,,,,,0402
+66,RK73H1ETTP10R0F,4,KOA,RES,SMT,,,,,,,,0402
+67,RK73H1ETTP4703F,4,KOA,RES,SMT,,,,,,,,0402
+68,RK73H1ETTP3303F,4,KOA,RES,SMT,,,,,,,,0402
+69,RK73H1ETTP6802F,4,KOA,RES,SMT,,,,,,,,0402
+70,RK73H1ETTP3300F,11,KOA,RES,SMT,,,,,,,,0402
+71,RK73Z2ATTD,1,KOA,RES,SMT,,,,,,,,0805
+72,EDZVT2R12B,2,ROHM,ZEN,SMT,ROHM EDZVT2R12B：EMD2；Package Code SOD-523 / JEITA SC-79。,,,,https://www.rohm.com/products/diodes/zener-diodes/standard/edzv12b-product,,,EMD2 / SOD-523 (SC-79)
+73,SMDJ30A,1,Littelfuse,TVS DIODE,SMT,Littelfuse SMDJ30A：DO-214AB，常稱 SMC。,,,,https://www.littelfuse.com/products/overvoltage-protection/tvs-diodes/surface-mount/smdj,,,DO-214AB (SMC J-Bend)
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+第二PCB,,,,,,,,,,,,,
+1,CGA5L2C0G1H104J160AA,2,TDK,CAP,SMT,,,,,,,,1206
+2,1720650202,1,Molex,CONN,DIP,第二PCB；確認為 Connector；高度 14.80 mm 為 Insulation Height。,14.8,5.7,2,"https://www.molex.com/en-us/products/series-chart/172065
+https://www.digikey.com/en/products/detail/molex/1720650202/7604326",https://www.mouser.com/en/ProductDetail/Molex/172065-0202?qs=BZBei1rCqCCru1TXi1Q0xA%3D%3D,"官方產品頁：https://www.molex.com/en-us/products/part-detail/1720650202
+PDF：https://www.farnell.com/datasheets/2360584.pdf",
+3,2002411122,1,Molex,CONN,DIP,第二PCB；確認為 Connector；高度 15.29 mm 為 Insulation Height。,15.29,5.7,2,"https://www.molex.com/en-us/products/series-chart/200241
+https://www.digikey.com/en/products/detail/molex/2002411122/10709053",https://www.mouser.com/en/ProductDetail/Molex/200241-1122?qs=PzGy0jfpSMtReuFSxKSvdQ%3D%3D,"官方產品頁：https://www.molex.com/en-us/products/part-detail/2002411122
+PDF：https://static6.arrow.com/aropdfconversion/13427ca82285fdc04225ec7cf86ce34e782f8b03/dtemp2002411122.pdf",
+4,ACM1211-102-2PL-TL01,1,TDK,FILTER,SMT,,,,,https://product.tdk.com/en/search/emc/emc/line-filter/info?part_no=ACM1211-102-2PL-TL01,,,0.472 × 0.433 in（非EIA）
+5,SMDJ30A,1,Littelfuse,TVS Diode,SMT,第二PCB：Littelfuse SMDJ30A，DO-214AB / SMC。,,,,https://www.littelfuse.com/products/overvoltage-protection/tvs-diodes/surface-mount/smdj,,,DO-214AB (SMC J-Bend)
