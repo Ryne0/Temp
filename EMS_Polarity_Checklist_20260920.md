@@ -1,6 +1,6 @@
 # EMS 極性注意表
 
-更新日期：2026-09-20（v2）
+更新日期：2026-09-20（v3）
 
 > 用途：打件前快速確認哪些零件「真的需要列入產線極性圖」、哪些只是有方向、哪些其實無極性。  
 > 注意：本表是工作預審用，最終仍以 MPN Datasheet、客戶 Assembly/Polarity drawing、PCB/Gerber/實板標示為準。
@@ -17,16 +17,24 @@
 
 ## 需要優先確認極性的零件
 
-| BOM序號 | MPN | 類型 | 極性/方向 | 是否列入產線極性圖 | 元件本體辨認重點 | 極性圖建議標示 |
-|---:|---|---|---|---|---|---|
-| 6 | GYB1V151MCQ1GS | 鋁電解電容 | 有 + / - | **要** | 外殼負極側有 Negative polarity 標示 | 直接標 + / - |
-| 12 | UUD1H151MNL1GS | 鋁電解電容 | 有 + / - | **要** | 依 Datasheet Positive / Negative 判定 | 直接標 + / - |
-| 13 | ADCR-X02R7SB105PT | Supercapacitor | 有 + / - | **要** | 負極側套管有 negative bar | 直接標 + / - |
-| 24 | V8P10-M3/86A | Schottky diode | 有 A / K 方向 | **要** | 有 1 個 Cathode K、2 個 Anode pad | 標 K / A，不要標成普通兩腳二極體 |
-| 25 | SMF12A-E3-18 | TVS | 有 A / K 方向 | **要** | Band 側為 Cathode | 標 K / A |
-| 26 | RB068MM-60TFTR | Schottky diode | 有 A / K 方向 | **要** | Marking bar 側為 Cathode | 標 K / A |
-| 72 | EDZVT2R12B | Zener diode | 有 A / K 方向 | **要** | Cathode band 側為 K | 標 K / A |
-| 73 | SMDJ30A | TVS | 有 A / K 方向 | **要** | Color band 側為 Cathode | 標 K / A |
+| BOM序號 | MPN | 類型 | 極性/方向 | K 高/低電位預判 | 是否列入產線極性圖 | 元件本體辨認重點 | 極性圖建議標示 |
+|---:|---|---|---|---|---|---|---|
+| 6 | GYB1V151MCQ1GS | 鋁電解電容 | 有 + / - | 不適用 | **要** | 外殼負極側有 Negative polarity 標示 | 直接標 + / - |
+| 12 | UUD1H151MNL1GS | 鋁電解電容 | 有 + / - | 不適用 | **要** | 依 Datasheet Positive / Negative 判定 | 直接標 + / - |
+| 13 | ADCR-X02R7SB105PT | Supercapacitor | 有 + / - | 不適用 | **要** | 負極側套管有 negative bar | 直接標 + / - |
+| 24 | V8P10-M3/86A | Schottky diode | 有 A / K 方向 | **不可只由料號判定**；串聯整流時常見 A 高、K 低；freewheel/箝位時可能 K 高 | **要** | 有 1 個 Cathode K、2 個 Anode pad | 標 K / A，不要標成普通兩腳二極體 |
+| 25 | SMF12A-E3-18 | 單向 TVS | 有 A / K 方向 | **若為正電源/訊號對 GND 箝位，通常 K 高、A 低** | **要** | Band 側為 Cathode | 標 K / A |
+| 26 | RB068MM-60TFTR | Schottky diode | 有 A / K 方向 | **不可只由料號判定**；用途不同方向可能相反 | **要** | Marking bar 側為 Cathode | 標 K / A |
+| 72 | EDZVT2R12B | Zener diode | 有 A / K 方向 | **若為一般正向穩壓/過壓箝位，通常 K 高、A 低** | **要** | Cathode band 側為 K | 標 K / A |
+| 73 | SMDJ30A | 單向 TVS | 有 A / K 方向 | **若為正電源對 GND surge clamp，通常 K 高、A 低** | **要** | Color band 側為 Cathode | 標 K / A |
+
+### 「高 / 低電位」與 GND 的關係
+
+- **常見，但不是一定。** 對「正電源或正向訊號對地箝位」的 Zener / 單向 TVS，低電位端常常就是 GND，所以常看到 **K → +V/Signal、A → GND**。
+- 線圈 freewheel / 箝位時，兩端常是 **+V 與 Switching Node**，此時低電位端不一定直接是 GND。
+- 串聯整流／反接保護時，二極體兩端可能都不是 GND，只是兩個不同電位的電源節點。
+- 負電源、負向訊號箝位、AC 線路或雙向保護時，也不能把「低電位」直接等同 GND。
+- 所以 Gerber 實務上先找 GND 是很好的起點，但最後仍要看該元件兩端實際接到哪兩個 Net。
 
 ---
 
